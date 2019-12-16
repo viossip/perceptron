@@ -34,10 +34,9 @@ void defineClassifierType(MPI_Datatype* MPI_Classifier) {
 int readFromFile(FILE **file, ClassifierData * classifier, PointData ** P) {
 
 	fflush(stdout);
-	fopen_s(file, "E:/mpi/Input.txt", "r+");
+	fopen_s(file, "C:/perceptron/input.txt", "r+");
 
 	if (*file == NULL) {
-		perror("E:/mpi/Input.txt");
 		fflush(stdout);
 		return 0;
 	}
@@ -53,7 +52,7 @@ int readFromFile(FILE **file, ClassifierData * classifier, PointData ** P) {
 
 int writeToFile(double *weights, int dim, double time, double q, int solved) {
 	FILE *f;
-	fopen_s(&f, "E:/mpi/Output.txt", "w");
+	fopen_s(&f, "C:/perceptron/Output.txt", "w");
 
 	if (f == NULL) {
 		printf("Error writing to file!\n");
